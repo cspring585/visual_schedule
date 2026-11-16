@@ -30,8 +30,8 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      padding: 12px;
-      gap: 12px;
+      padding: 10px;
+      gap: 10px;
     }
 
     header {
@@ -39,14 +39,14 @@
       justify-content: space-between;
       align-items: center;
       background: var(--card-bg);
-      padding: 10px 18px;
+      padding: 8px 16px;
       border-radius: 12px;
       box-shadow: var(--shadow);
       border: 2px solid var(--border-color);
     }
 
     .header-title {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: 800;
       color: #1e293b;
       letter-spacing: 0.5px;
@@ -55,14 +55,14 @@
     .controls {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
     }
 
     .clock-display {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: 700;
       background: #e2e8f0;
-      padding: 6px 14px;
+      padding: 5px 12px;
       border-radius: 8px;
       color: #0f172a;
       font-variant-numeric: tabular-nums;
@@ -98,19 +98,10 @@
       background: #cbd5e1;
     }
 
-    .btn-primary {
-      background: #2563eb;
-      color: #ffffff;
-    }
-
-    .btn-primary:hover {
-      background: #1d4ed8;
-    }
-
     .schedule-grid {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
-      gap: 12px;
+      gap: 10px;
       flex: 1;
       min-height: 0;
     }
@@ -137,9 +128,9 @@
       background: #334155;
       color: #ffffff;
       text-align: center;
-      padding: 10px 6px;
+      padding: 8px 4px;
       font-weight: 700;
-      font-size: 1.05rem;
+      font-size: 0.98rem;
       border-bottom: 2px solid var(--border-color);
       transition: background-color 0.3s ease;
     }
@@ -149,11 +140,11 @@
     }
 
     .col-body {
-      padding: 10px;
+      padding: 8px;
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
-      gap: 10px;
+      justify-content: space-between;
+      gap: 6px;
       flex: 1;
     }
 
@@ -162,76 +153,105 @@
       background: #ffffff;
       border: 2.5px solid #1e293b;
       border-radius: 10px;
-      padding: 8px;
+      padding: 6px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      gap: 6px;
+      gap: 4px;
       flex: 1;
     }
 
     .aac-card svg {
-      width: 68px;
-      height: 68px;
+      width: 58px;
+      height: 58px;
       flex-shrink: 0;
     }
 
     .aac-label {
-      font-size: 1.2rem;
+      font-size: 1.05rem;
       font-weight: 800;
       color: #0f172a;
       text-transform: uppercase;
       letter-spacing: 0.4px;
-      line-height: 1.15;
+      line-height: 1.1;
+    }
+
+    /* Between-Clipart Editable Textboxes */
+    .between-textbox {
+      width: 100%;
+      min-height: 36px;
+      border: 2px dashed #94a3b8;
+      border-radius: 8px;
+      padding: 4px 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #0f172a;
+      background: #f8fafc;
+      resize: vertical;
+      text-align: center;
+    }
+
+    .between-textbox:focus {
+      outline: none;
+      border-style: solid;
+      border-color: #2563eb;
+      background: #ffffff;
     }
 
     /* Centers Grid inside Col 5 */
     .centers-header {
-      font-size: 1.45rem;
+      font-size: 1.25rem;
       font-weight: 900;
       text-align: center;
       color: #1e293b;
       background: #fef08a;
       border: 2.5px solid #ca8a04;
       border-radius: 10px;
-      padding: 8px;
+      padding: 6px;
       text-transform: uppercase;
     }
 
     .centers-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 8px;
+      gap: 6px;
       flex: 1;
     }
 
     .centers-grid .aac-card svg {
-      width: 52px;
-      height: 52px;
+      width: 44px;
+      height: 44px;
     }
 
     .centers-grid .aac-label {
-      font-size: 0.95rem;
+      font-size: 0.85rem;
     }
 
-    /* Column 3 Specialist Sections */
-    .col-3-body {
+    /* Columns 2 & 3 Split Layout (Specialist + Work Time) */
+    .split-col-body {
       padding: 8px;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 6px;
       flex: 1;
+    }
+
+    .specialist-section {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1.4;
     }
 
     .specialist-title-box {
       background: #e0e7ff;
       border: 2.5px solid #4338ca;
-      border-radius: 10px;
-      padding: 10px 6px;
+      border-radius: 8px;
+      padding: 6px 4px;
       text-align: center;
-      font-size: 1.2rem;
+      font-size: 1rem;
       font-weight: 900;
       color: #1e1b4b;
       text-transform: uppercase;
@@ -240,101 +260,120 @@
     .specialist-slot {
       background: #ffffff;
       border: 2px solid #94a3b8;
-      border-radius: 10px;
-      padding: 6px 8px;
+      border-radius: 8px;
+      padding: 6px;
       display: flex;
       flex-direction: column;
       gap: 6px;
       flex: 1;
-      justify-content: center;
     }
 
     .slot-time {
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       font-weight: 800;
       color: #ffffff;
       background: #475569;
-      padding: 2px 8px;
-      border-radius: 6px;
+      padding: 2px 6px;
+      border-radius: 5px;
       text-align: center;
     }
 
-    .slot-content {
+    /* Two Clipart + Textbox Pairs per Time Slot */
+    .dual-slot-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+      justify-content: space-around;
+    }
+
+    .slot-pair {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
+      background: #f8fafc;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 4px;
     }
 
     .aac-picker-box {
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 72px;
+      width: 58px;
       flex-shrink: 0;
     }
 
     .aac-icon-display {
-      width: 54px;
-      height: 54px;
+      width: 42px;
+      height: 42px;
       border: 2px dashed #94a3b8;
-      border-radius: 8px;
+      border-radius: 6px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #f8fafc;
-      margin-bottom: 4px;
+      background: #ffffff;
+      margin-bottom: 3px;
     }
 
     .aac-icon-display.has-icon {
       border-style: solid;
       border-color: #1e293b;
-      background: #ffffff;
     }
 
     .aac-icon-display svg {
-      width: 44px;
-      height: 44px;
+      width: 34px;
+      height: 34px;
     }
 
     .specialist-select {
       width: 100%;
-      font-size: 0.78rem;
+      font-size: 0.7rem;
       font-weight: 700;
-      padding: 2px;
+      padding: 1px;
       border-radius: 4px;
       border: 1px solid #cbd5e1;
-      background: #f1f5f9;
+      background: #e2e8f0;
       color: #0f172a;
       cursor: pointer;
     }
 
     .teacher-input {
       width: 100%;
-      height: 100%;
-      min-height: 64px;
+      height: 56px;
       border: 1.5px solid #cbd5e1;
-      border-radius: 8px;
-      padding: 6px;
-      font-size: 0.95rem;
+      border-radius: 6px;
+      padding: 4px 6px;
+      font-size: 0.85rem;
       font-weight: 600;
       color: #0f172a;
       resize: none;
-      background: #f8fafc;
+      background: #ffffff;
     }
 
     .teacher-input:focus {
       outline: none;
       border-color: #2563eb;
-      background: #ffffff;
     }
 
-    @media (max-width: 1100px) {
+    .work-time-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .work-time-section .aac-card {
+      flex: 1;
+    }
+
+    @media (max-width: 1200px) {
       .schedule-grid {
         grid-template-columns: repeat(3, 1fr);
       }
     }
 
-    @media (max-width: 650px) {
+    @media (max-width: 700px) {
       .schedule-grid {
         grid-template-columns: 1fr;
       }
@@ -366,7 +405,6 @@
       <div class="col-header">7:45 AM – 8:30 AM</div>
       <div class="col-body">
         <div class="aac-card">
-          <!-- Arrival AAC Clipart -->
           <svg viewBox="0 0 100 100" aria-hidden="true">
             <rect x="10" y="25" width="60" height="45" rx="8" fill="#facc15" stroke="#1e293b" stroke-width="4"/>
             <rect x="18" y="33" width="16" height="16" rx="2" fill="#e0f2fe" stroke="#1e293b" stroke-width="3"/>
@@ -378,8 +416,9 @@
           <div class="aac-label">Arrival</div>
         </div>
 
+        <textarea class="between-textbox" id="note-c1-1" placeholder="Notes..."></textarea>
+
         <div class="aac-card">
-          <!-- Breakfast AAC Clipart -->
           <svg viewBox="0 0 100 100" aria-hidden="true">
             <path d="M18 52 C18 76, 82 76, 82 52 Z" fill="#38bdf8" stroke="#1e293b" stroke-width="4"/>
             <ellipse cx="50" cy="52" rx="32" ry="8" fill="#fef3c7" stroke="#1e293b" stroke-width="3"/>
@@ -391,8 +430,9 @@
           <div class="aac-label">Breakfast</div>
         </div>
 
+        <textarea class="between-textbox" id="note-c1-2" placeholder="Notes..."></textarea>
+
         <div class="aac-card">
-          <!-- Morning Meeting AAC Clipart -->
           <svg viewBox="0 0 100 100" aria-hidden="true">
             <circle cx="50" cy="30" r="14" fill="#facc15" stroke="#1e293b" stroke-width="3"/>
             <path d="M50 8 L50 13 M50 47 L50 52 M28 30 L33 30 M67 30 L72 30 M35 15 L39 19 M61 41 L65 45 M65 15 L61 19 M39 41 L35 45" stroke="#f59e0b" stroke-width="3.5" stroke-linecap="round"/>
@@ -408,104 +448,183 @@
       </div>
     </section>
 
-    <!-- COLUMN 2: 8:30 AM - 11:05 AM -->
-    <section class="schedule-col" id="col-2" data-start="510" data-end="665">
-      <div class="col-header">8:30 AM – 11:05 AM</div>
-      <div class="col-body">
-        <div class="aac-card">
-          <!-- Work Time AAC Clipart (Students working at desk with pencil/paper) -->
-          <svg viewBox="0 0 100 100" aria-hidden="true">
-            <!-- Student 1 -->
-            <circle cx="32" cy="26" r="11" fill="#fde047" stroke="#1e293b" stroke-width="3.5"/>
-            <path d="M16 54 C16 40, 48 40, 48 54" fill="#3b82f6" stroke="#1e293b" stroke-width="3.5"/>
-            <!-- Student 2 -->
-            <circle cx="68" cy="26" r="11" fill="#fdba74" stroke="#1e293b" stroke-width="3.5"/>
-            <path d="M52 54 C52 40, 84 40, 84 54" fill="#10b981" stroke="#1e293b" stroke-width="3.5"/>
-            <!-- Desk -->
-            <rect x="10" y="54" width="80" height="10" rx="3" fill="#d97706" stroke="#1e293b" stroke-width="3.5"/>
-            <line x1="20" y1="64" x2="20" y2="88" stroke="#1e293b" stroke-width="4"/>
-            <line x1="80" y1="64" x2="80" y2="88" stroke="#1e293b" stroke-width="4"/>
-            <!-- Paper & Pencil -->
-            <polygon points="24,54 44,54 40,46 20,46" fill="#ffffff" stroke="#1e293b" stroke-width="2.5"/>
-            <line x1="62" y1="52" x2="76" y2="38" stroke="#facc15" stroke-width="5" stroke-linecap="round"/>
-          </svg>
-          <div class="aac-label">Work Time</div>
+    <!-- COLUMN 2: 8:35 AM - 9:55 AM (Specialist + Work Time) -->
+    <section class="schedule-col" id="col-2" data-start="515" data-end="595">
+      <div class="col-header">8:35 AM – 9:55 AM</div>
+      <div class="split-col-body">
+        <div class="specialist-section">
+          <div class="specialist-title-box">Specialist Schedule</div>
+
+          <!-- Slot 1: 8:35-9:10 -->
+          <div class="specialist-slot">
+            <div class="slot-time">8:35 – 9:10</div>
+            <div class="dual-slot-grid">
+              <div class="slot-pair">
+                <div class="aac-picker-box">
+                  <div class="aac-icon-display" id="icon-slot-1a"></div>
+                  <select class="specialist-select" data-target="1a" aria-label="Specialist 1 for 8:35-9:10">
+                    <option value="">+ AAC</option>
+                    <option value="music">Music</option>
+                    <option value="library">Library</option>
+                    <option value="pe">P.E.</option>
+                  </select>
+                </div>
+                <textarea class="teacher-input" id="text-slot-1a" placeholder="Teacher & Specialist 1..."></textarea>
+              </div>
+              <div class="slot-pair">
+                <div class="aac-picker-box">
+                  <div class="aac-icon-display" id="icon-slot-1b"></div>
+                  <select class="specialist-select" data-target="1b" aria-label="Specialist 2 for 8:35-9:10">
+                    <option value="">+ AAC</option>
+                    <option value="music">Music</option>
+                    <option value="library">Library</option>
+                    <option value="pe">P.E.</option>
+                  </select>
+                </div>
+                <textarea class="teacher-input" id="text-slot-1b" placeholder="Teacher & Specialist 2..."></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slot 2: 9:15-9:50 -->
+          <div class="specialist-slot">
+            <div class="slot-time">9:15 – 9:50</div>
+            <div class="dual-slot-grid">
+              <div class="slot-pair">
+                <div class="aac-picker-box">
+                  <div class="aac-icon-display" id="icon-slot-2a"></div>
+                  <select class="specialist-select" data-target="2a" aria-label="Specialist 1 for 9:15-9:50">
+                    <option value="">+ AAC</option>
+                    <option value="music">Music</option>
+                    <option value="library">Library</option>
+                    <option value="pe">P.E.</option>
+                  </select>
+                </div>
+                <textarea class="teacher-input" id="text-slot-2a" placeholder="Teacher & Specialist 1..."></textarea>
+              </div>
+              <div class="slot-pair">
+                <div class="aac-picker-box">
+                  <div class="aac-icon-display" id="icon-slot-2b"></div>
+                  <select class="specialist-select" data-target="2b" aria-label="Specialist 2 for 9:15-9:50">
+                    <option value="">+ AAC</option>
+                    <option value="music">Music</option>
+                    <option value="library">Library</option>
+                    <option value="pe">P.E.</option>
+                  </select>
+                </div>
+                <textarea class="teacher-input" id="text-slot-2b" placeholder="Teacher & Specialist 2..."></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <textarea class="between-textbox" id="note-c2-1" placeholder="Notes..."></textarea>
+
+        <div class="work-time-section">
+          <div class="aac-card">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <circle cx="32" cy="26" r="11" fill="#fde047" stroke="#1e293b" stroke-width="3.5"/>
+              <path d="M16 54 C16 40, 48 40, 48 54" fill="#3b82f6" stroke="#1e293b" stroke-width="3.5"/>
+              <circle cx="68" cy="26" r="11" fill="#fdba74" stroke="#1e293b" stroke-width="3.5"/>
+              <path d="M52 54 C52 40, 84 40, 84 54" fill="#10b981" stroke="#1e293b" stroke-width="3.5"/>
+              <rect x="10" y="54" width="80" height="10" rx="3" fill="#d97706" stroke="#1e293b" stroke-width="3.5"/>
+              <line x1="20" y1="64" x2="20" y2="88" stroke="#1e293b" stroke-width="4"/>
+              <line x1="80" y1="64" x2="80" y2="88" stroke="#1e293b" stroke-width="4"/>
+              <polygon points="24,54 44,54 40,46 20,46" fill="#ffffff" stroke="#1e293b" stroke-width="2.5"/>
+              <line x1="62" y1="52" x2="76" y2="38" stroke="#facc15" stroke-width="5" stroke-linecap="round"/>
+            </svg>
+            <div class="aac-label">Work Time</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- COLUMN 3: 8:30 AM - 11:05 AM (5 Sections) -->
-    <section class="schedule-col" id="col-3" data-start="510" data-end="665">
-      <div class="col-header">8:30 AM – 11:05 AM</div>
-      <div class="col-3-body">
-        <!-- Section 1 -->
-        <div class="specialist-title-box">Specialist Schedule</div>
+    <!-- COLUMN 3: 9:55 AM - 10:45 AM (Specialist + Work Time) -->
+    <section class="schedule-col" id="col-3" data-start="595" data-end="645">
+      <div class="col-header">9:55 AM – 10:45 AM</div>
+      <div class="split-col-body">
+        <div class="specialist-section">
+          <div class="specialist-title-box">Specialist Schedule</div>
 
-        <!-- Section 2: 8:35-9:10 -->
-        <div class="specialist-slot" data-slot="1">
-          <div class="slot-time">8:35 – 9:10</div>
-          <div class="slot-content">
-            <div class="aac-picker-box">
-              <div class="aac-icon-display" id="icon-slot-1"></div>
-              <select class="specialist-select" data-target="1" aria-label="Select specialist for 8:35-9:10">
-                <option value="">+ AAC</option>
-                <option value="music">Music</option>
-                <option value="library">Library</option>
-                <option value="pe">P.E.</option>
-              </select>
+          <!-- Slot 3: 9:55-10:30 -->
+          <div class="specialist-slot">
+            <div class="slot-time">9:55 – 10:30</div>
+            <div class="dual-slot-grid">
+              <div class="slot-pair">
+                <div class="aac-picker-box">
+                  <div class="aac-icon-display" id="icon-slot-3a"></div>
+                  <select class="specialist-select" data-target="3a" aria-label="Specialist 1 for 9:55-10:30">
+                    <option value="">+ AAC</option>
+                    <option value="music">Music</option>
+                    <option value="library">Library</option>
+                    <option value="pe">P.E.</option>
+                  </select>
+                </div>
+                <textarea class="teacher-input" id="text-slot-3a" placeholder="Teacher & Specialist 1..."></textarea>
+              </div>
+              <div class="slot-pair">
+                <div class="aac-picker-box">
+                  <div class="aac-icon-display" id="icon-slot-3b"></div>
+                  <select class="specialist-select" data-target="3b" aria-label="Specialist 2 for 9:55-10:30">
+                    <option value="">+ AAC</option>
+                    <option value="music">Music</option>
+                    <option value="library">Library</option>
+                    <option value="pe">P.E.</option>
+                  </select>
+                </div>
+                <textarea class="teacher-input" id="text-slot-3b" placeholder="Teacher & Specialist 2..."></textarea>
+              </div>
             </div>
-            <textarea class="teacher-input" id="text-slot-1" placeholder="Teacher & Specialist..."></textarea>
+          </div>
+
+          <!-- Slot 4: 10:35-11:10 -->
+          <div class="specialist-slot">
+            <div class="slot-time">10:35 – 11:10</div>
+            <div class="dual-slot-grid">
+              <div class="slot-pair">
+                <div class="aac-picker-box">
+                  <div class="aac-icon-display" id="icon-slot-4a"></div>
+                  <select class="specialist-select" data-target="4a" aria-label="Specialist 1 for 10:35-11:10">
+                    <option value="">+ AAC</option>
+                    <option value="music">Music</option>
+                    <option value="library">Library</option>
+                    <option value="pe">P.E.</option>
+                  </select>
+                </div>
+                <textarea class="teacher-input" id="text-slot-4a" placeholder="Teacher & Specialist 1..."></textarea>
+              </div>
+              <div class="slot-pair">
+                <div class="aac-picker-box">
+                  <div class="aac-icon-display" id="icon-slot-4b"></div>
+                  <select class="specialist-select" data-target="4b" aria-label="Specialist 2 for 10:35-11:10">
+                    <option value="">+ AAC</option>
+                    <option value="music">Music</option>
+                    <option value="library">Library</option>
+                    <option value="pe">P.E.</option>
+                  </select>
+                </div>
+                <textarea class="teacher-input" id="text-slot-4b" placeholder="Teacher & Specialist 2..."></textarea>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Section 3: 9:15-9:50 -->
-        <div class="specialist-slot" data-slot="2">
-          <div class="slot-time">9:15 – 9:50</div>
-          <div class="slot-content">
-            <div class="aac-picker-box">
-              <div class="aac-icon-display" id="icon-slot-2"></div>
-              <select class="specialist-select" data-target="2" aria-label="Select specialist for 9:15-9:50">
-                <option value="">+ AAC</option>
-                <option value="music">Music</option>
-                <option value="library">Library</option>
-                <option value="pe">P.E.</option>
-              </select>
-            </div>
-            <textarea class="teacher-input" id="text-slot-2" placeholder="Teacher & Specialist..."></textarea>
-          </div>
-        </div>
+        <textarea class="between-textbox" id="note-c3-1" placeholder="Notes..."></textarea>
 
-        <!-- Section 4: 9:55-10:30 -->
-        <div class="specialist-slot" data-slot="3">
-          <div class="slot-time">9:55 – 10:30</div>
-          <div class="slot-content">
-            <div class="aac-picker-box">
-              <div class="aac-icon-display" id="icon-slot-3"></div>
-              <select class="specialist-select" data-target="3" aria-label="Select specialist for 9:55-10:30">
-                <option value="">+ AAC</option>
-                <option value="music">Music</option>
-                <option value="library">Library</option>
-                <option value="pe">P.E.</option>
-              </select>
-            </div>
-            <textarea class="teacher-input" id="text-slot-3" placeholder="Teacher & Specialist..."></textarea>
-          </div>
-        </div>
-
-        <!-- Section 5: 10:35-11:10 -->
-        <div class="specialist-slot" data-slot="4">
-          <div class="slot-time">10:35 – 11:10</div>
-          <div class="slot-content">
-            <div class="aac-picker-box">
-              <div class="aac-icon-display" id="icon-slot-4"></div>
-              <select class="specialist-select" data-target="4" aria-label="Select specialist for 10:35-11:10">
-                <option value="">+ AAC</option>
-                <option value="music">Music</option>
-                <option value="library">Library</option>
-                <option value="pe">P.E.</option>
-              </select>
-            </div>
-            <textarea class="teacher-input" id="text-slot-4" placeholder="Teacher & Specialist..."></textarea>
+        <div class="work-time-section">
+          <div class="aac-card">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <circle cx="32" cy="26" r="11" fill="#fde047" stroke="#1e293b" stroke-width="3.5"/>
+              <path d="M16 54 C16 40, 48 40, 48 54" fill="#3b82f6" stroke="#1e293b" stroke-width="3.5"/>
+              <circle cx="68" cy="26" r="11" fill="#fdba74" stroke="#1e293b" stroke-width="3.5"/>
+              <path d="M52 54 C52 40, 84 40, 84 54" fill="#10b981" stroke="#1e293b" stroke-width="3.5"/>
+              <rect x="10" y="54" width="80" height="10" rx="3" fill="#d97706" stroke="#1e293b" stroke-width="3.5"/>
+              <line x1="20" y1="64" x2="20" y2="88" stroke="#1e293b" stroke-width="4"/>
+              <line x1="80" y1="64" x2="80" y2="88" stroke="#1e293b" stroke-width="4"/>
+              <polygon points="24,54 44,54 40,46 20,46" fill="#ffffff" stroke="#1e293b" stroke-width="2.5"/>
+              <line x1="62" y1="52" x2="76" y2="38" stroke="#facc15" stroke-width="5" stroke-linecap="round"/>
+            </svg>
+            <div class="aac-label">Work Time</div>
           </div>
         </div>
       </div>
@@ -516,7 +635,6 @@
       <div class="col-header">11:05 AM – 11:45 AM</div>
       <div class="col-body">
         <div class="aac-card">
-          <!-- Lunch AAC Clipart -->
           <svg viewBox="0 0 100 100" aria-hidden="true">
             <rect x="12" y="24" width="76" height="52" rx="6" fill="#cbd5e1" stroke="#1e293b" stroke-width="4"/>
             <rect x="18" y="30" width="38" height="40" rx="4" fill="#ffffff" stroke="#1e293b" stroke-width="2.5"/>
@@ -529,8 +647,9 @@
           <div class="aac-label">Lunch</div>
         </div>
 
+        <textarea class="between-textbox" id="note-c4-1" placeholder="Notes..."></textarea>
+
         <div class="aac-card">
-          <!-- Recess AAC Clipart -->
           <svg viewBox="0 0 100 100" aria-hidden="true">
             <line x1="20" y1="20" x2="80" y2="20" stroke="#dc2626" stroke-width="6" stroke-linecap="round"/>
             <line x1="24" y1="20" x2="14" y2="85" stroke="#dc2626" stroke-width="5" stroke-linecap="round"/>
@@ -550,8 +669,10 @@
       <div class="col-header">11:45 AM – 1:15 PM</div>
       <div class="col-body">
         <div class="centers-header">Centers</div>
+
+        <textarea class="between-textbox" id="note-c5-1" placeholder="Center Groups / Notes..."></textarea>
+
         <div class="centers-grid">
-          <!-- Cooking -->
           <div class="aac-card">
             <svg viewBox="0 0 100 100" aria-hidden="true">
               <path d="M28 45 C18 45, 18 25, 34 25 C38 14, 62 14, 66 25 C82 25, 82 45, 72 45 Z" fill="#ffffff" stroke="#1e293b" stroke-width="3.5"/>
@@ -562,7 +683,6 @@
             <div class="aac-label">Cooking</div>
           </div>
 
-          <!-- Art -->
           <div class="aac-card">
             <svg viewBox="0 0 100 100" aria-hidden="true">
               <path d="M50 18 C25 18, 14 38, 18 58 C22 76, 42 84, 56 76 C64 71, 60 60, 68 58 C78 55, 86 46, 82 32 C78 20, 64 18, 50 18 Z" fill="#fde68a" stroke="#1e293b" stroke-width="3.5"/>
@@ -575,7 +695,6 @@
             <div class="aac-label">Art</div>
           </div>
 
-          <!-- Puzzles / Games -->
           <div class="aac-card">
             <svg viewBox="0 0 100 100" aria-hidden="true">
               <path d="M25 30 H45 C45 22, 55 22, 55 30 H75 V50 C83 50, 83 60, 75 60 V80 H55 C55 72, 45 72, 45 80 H25 V60 C33 60, 33 50, 25 50 Z" fill="#38bdf8" stroke="#1e293b" stroke-width="4" stroke-linejoin="round"/>
@@ -583,7 +702,6 @@
             <div class="aac-label">Puzzles / Games</div>
           </div>
 
-          <!-- Reading -->
           <div class="aac-card">
             <svg viewBox="0 0 100 100" aria-hidden="true">
               <path d="M14 28 C28 24, 42 28, 50 34 C58 28, 72 24, 86 28 V76 C72 72, 58 76, 50 82 C42 76, 28 72, 14 76 Z" fill="#ffffff" stroke="#1e293b" stroke-width="4" stroke-linejoin="round"/>
@@ -604,7 +722,6 @@
       <div class="col-header">1:15 PM – 2:10 PM</div>
       <div class="col-body">
         <div class="aac-card">
-          <!-- Recess AAC Clipart -->
           <svg viewBox="0 0 100 100" aria-hidden="true">
             <circle cx="50" cy="50" r="32" fill="#ef4444" stroke="#1e293b" stroke-width="4"/>
             <path d="M22 36 C40 44, 60 44, 78 36" fill="none" stroke="#ffffff" stroke-width="4"/>
@@ -614,8 +731,9 @@
           <div class="aac-label">Recess</div>
         </div>
 
+        <textarea class="between-textbox" id="note-c6-1" placeholder="Notes..."></textarea>
+
         <div class="aac-card">
-          <!-- Snack AAC Clipart -->
           <svg viewBox="0 0 100 100" aria-hidden="true">
             <path d="M50 32 C34 26, 20 38, 22 58 C24 76, 38 84, 50 80 C62 84, 76 76, 78 58 C80 38, 66 26, 50 32 Z" fill="#ef4444" stroke="#1e293b" stroke-width="3.5"/>
             <path d="M50 32 C50 22, 54 16, 58 14" fill="none" stroke="#78350f" stroke-width="4" stroke-linecap="round"/>
@@ -624,8 +742,9 @@
           <div class="aac-label">Snack</div>
         </div>
 
+        <textarea class="between-textbox" id="note-c6-2" placeholder="Notes..."></textarea>
+
         <div class="aac-card">
-          <!-- Class Jobs AAC Clipart -->
           <svg viewBox="0 0 100 100" aria-hidden="true">
             <line x1="35" y1="16" x2="35" y2="62" stroke="#d97706" stroke-width="6" stroke-linecap="round"/>
             <path d="M22 62 H48 L54 86 H16 Z" fill="#facc15" stroke="#1e293b" stroke-width="3.5" stroke-linejoin="round"/>
@@ -637,8 +756,9 @@
           <div class="aac-label">Class Jobs</div>
         </div>
 
+        <textarea class="between-textbox" id="note-c6-3" placeholder="Notes..."></textarea>
+
         <div class="aac-card">
-          <!-- Dismissal AAC Clipart -->
           <svg viewBox="0 0 100 100" aria-hidden="true">
             <rect x="28" y="34" width="44" height="48" rx="10" fill="#3b82f6" stroke="#1e293b" stroke-width="3.5"/>
             <path d="M40 34 V24 C40 18, 60 18, 60 24 V34" fill="none" stroke="#1e293b" stroke-width="4"/>
@@ -653,7 +773,6 @@
   </main>
 
   <script>
-    // AAC SVG Icons for Specialist Options (Music, Library, P.E.)
     const specialistIcons = {
       music: `
         <svg viewBox="0 0 100 100" aria-hidden="true">
@@ -679,35 +798,53 @@
         </svg>`
     };
 
-    // Load & Save Specialist Selections and Teacher Textboxes
-    const STORAGE_KEY = 'classroom_schedule_specialists_v1';
+    const STORAGE_KEY = 'classroom_schedule_data_v2';
+    const slotIds = ['1a', '1b', '2a', '2b', '3a', '3b', '4a', '4b'];
 
-    function loadSpecialistData() {
+    function loadScheduleData() {
       const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
-      for (let i = 1; i <= 4; i++) {
-        const selectEl = document.querySelector(`.specialist-select[data-target="${i}"]`);
-        const textEl = document.getElementById(`text-slot-${i}`);
-        if (saved[`icon_${i}`]) {
-          selectEl.value = saved[`icon_${i}`];
-          renderSpecialistIcon(i, saved[`icon_${i}`]);
+
+      // Load specialist icons and teacher inputs
+      slotIds.forEach(id => {
+        const selectEl = document.querySelector(`.specialist-select[data-target="${id}"]`);
+        const textEl = document.getElementById(`text-slot-${id}`);
+        if (selectEl && saved[`icon_${id}`]) {
+          selectEl.value = saved[`icon_${id}`];
+          renderSpecialistIcon(id, saved[`icon_${id}`]);
         }
-        if (saved[`text_${i}`]) {
-          textEl.value = saved[`text_${i}`];
+        if (textEl && saved[`text_${id}`]) {
+          textEl.value = saved[`text_${id}`];
         }
-      }
+      });
+
+      // Load between-clipart textboxes
+      document.querySelectorAll('.between-textbox').forEach(box => {
+        if (saved[box.id]) {
+          box.value = saved[box.id];
+        }
+      });
     }
 
-    function saveSpecialistData() {
+    function saveScheduleData() {
       const data = {};
-      for (let i = 1; i <= 4; i++) {
-        data[`icon_${i}`] = document.querySelector(`.specialist-select[data-target="${i}"]`).value;
-        data[`text_${i}`] = document.getElementById(`text-slot-${i}`).value;
-      }
+
+      slotIds.forEach(id => {
+        const selectEl = document.querySelector(`.specialist-select[data-target="${id}"]`);
+        const textEl = document.getElementById(`text-slot-${id}`);
+        if (selectEl) data[`icon_${id}`] = selectEl.value;
+        if (textEl) data[`text_${id}`] = textEl.value;
+      });
+
+      document.querySelectorAll('.between-textbox').forEach(box => {
+        data[box.id] = box.value;
+      });
+
       localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
     }
 
-    function renderSpecialistIcon(slotNum, type) {
-      const display = document.getElementById(`icon-slot-${slotNum}`);
+    function renderSpecialistIcon(slotId, type) {
+      const display = document.getElementById(`icon-slot-${slotId}`);
+      if (!display) return;
       if (type && specialistIcons[type]) {
         display.innerHTML = specialistIcons[type];
         display.classList.add('has-icon');
@@ -721,12 +858,12 @@
       select.addEventListener('change', (e) => {
         const target = e.target.getAttribute('data-target');
         renderSpecialistIcon(target, e.target.value);
-        saveSpecialistData();
+        saveScheduleData();
       });
     });
 
-    document.querySelectorAll('.teacher-input').forEach(textarea => {
-      textarea.addEventListener('input', saveSpecialistData);
+    document.querySelectorAll('.teacher-input, .between-textbox').forEach(textarea => {
+      textarea.addEventListener('input', saveScheduleData);
     });
 
     // Time Highlighting & Clock Logic
@@ -748,13 +885,11 @@
         minutes = now.getMinutes();
       }
 
-      // Format clock display
       const ampm = hours >= 12 ? 'PM' : 'AM';
       const displayHour = hours % 12 === 0 ? 12 : hours % 12;
       const displayMin = minutes.toString().padStart(2, '0');
       clockDisplay.textContent = `${displayHour}:${displayMin} ${ampm}`;
 
-      // Convert current time to minutes since midnight
       const currentTotalMinutes = hours * 60 + minutes;
 
       columns.forEach(col => {
@@ -775,8 +910,7 @@
       updateScheduleHighlight();
     });
 
-    // Initialize
-    loadSpecialistData();
+    loadScheduleData();
     updateScheduleHighlight();
     setInterval(updateScheduleHighlight, 5000);
   </script>
