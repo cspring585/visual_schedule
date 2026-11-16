@@ -144,8 +144,36 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 6px;
+      gap: 8px;
       flex: 1;
+    }
+
+    /* Card Wrapper (Time Range Textbox + AAC Card) */
+    .card-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1;
+    }
+
+    .time-range-input {
+      width: 100%;
+      height: 30px;
+      border: 2px dashed #94a3b8;
+      border-radius: 8px;
+      padding: 3px 6px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #0f172a;
+      background: #f8fafc;
+      text-align: center;
+    }
+
+    .time-range-input:focus {
+      outline: none;
+      border-style: solid;
+      border-color: #2563eb;
+      background: #ffffff;
     }
 
     /* AAC Symbol Cards */
@@ -164,40 +192,18 @@
     }
 
     .aac-card svg {
-      width: 58px;
-      height: 58px;
+      width: 54px;
+      height: 54px;
       flex-shrink: 0;
     }
 
     .aac-label {
-      font-size: 1.05rem;
+      font-size: 1rem;
       font-weight: 800;
       color: #0f172a;
       text-transform: uppercase;
       letter-spacing: 0.4px;
       line-height: 1.1;
-    }
-
-    /* Between-Clipart Editable Textboxes */
-    .between-textbox {
-      width: 100%;
-      min-height: 36px;
-      border: 2px dashed #94a3b8;
-      border-radius: 8px;
-      padding: 4px 6px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #0f172a;
-      background: #f8fafc;
-      resize: vertical;
-      text-align: center;
-    }
-
-    .between-textbox:focus {
-      outline: none;
-      border-style: solid;
-      border-color: #2563eb;
-      background: #ffffff;
     }
 
     /* Centers Grid inside Col 5 */
@@ -221,12 +227,12 @@
     }
 
     .centers-grid .aac-card svg {
-      width: 44px;
-      height: 44px;
+      width: 40px;
+      height: 40px;
     }
 
     .centers-grid .aac-label {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
     }
 
     /* Columns 2 & 3 Split Layout (Specialist + Work Time) */
@@ -234,7 +240,7 @@
       padding: 8px;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 8px;
       flex: 1;
     }
 
@@ -266,19 +272,10 @@
       flex-direction: column;
       gap: 6px;
       flex: 1;
+      justify-content: center;
     }
 
-    .slot-time {
-      font-size: 0.85rem;
-      font-weight: 800;
-      color: #ffffff;
-      background: #475569;
-      padding: 2px 6px;
-      border-radius: 5px;
-      text-align: center;
-    }
-
-    /* Two Clipart + Textbox Pairs per Time Slot */
+    /* Two Clipart + Textbox Pairs per Specialist Card */
     .dual-slot-grid {
       display: flex;
       flex-direction: column;
@@ -363,10 +360,6 @@
       flex-direction: column;
     }
 
-    .work-time-section .aac-card {
-      flex: 1;
-    }
-
     @media (max-width: 1200px) {
       .schedule-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -404,46 +397,51 @@
     <section class="schedule-col" id="col-1" data-start="465" data-end="510">
       <div class="col-header">7:45 AM – 8:30 AM</div>
       <div class="col-body">
-        <div class="aac-card">
-          <svg viewBox="0 0 100 100" aria-hidden="true">
-            <rect x="10" y="25" width="60" height="45" rx="8" fill="#facc15" stroke="#1e293b" stroke-width="4"/>
-            <rect x="18" y="33" width="16" height="16" rx="2" fill="#e0f2fe" stroke="#1e293b" stroke-width="3"/>
-            <rect x="40" y="33" width="16" height="16" rx="2" fill="#e0f2fe" stroke="#1e293b" stroke-width="3"/>
-            <circle cx="24" cy="72" r="9" fill="#334155" stroke="#0f172a" stroke-width="3"/>
-            <circle cx="56" cy="72" r="9" fill="#334155" stroke="#0f172a" stroke-width="3"/>
-            <path d="M74 50 L92 50 M85 42 L93 50 L85 58" stroke="#16a34a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          </svg>
-          <div class="aac-label">Arrival</div>
+        <div class="card-group">
+          <input type="text" class="time-range-input" id="time-c1-1" placeholder="Enter time range..." />
+          <div class="aac-card">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <rect x="10" y="25" width="60" height="45" rx="8" fill="#facc15" stroke="#1e293b" stroke-width="4"/>
+              <rect x="18" y="33" width="16" height="16" rx="2" fill="#e0f2fe" stroke="#1e293b" stroke-width="3"/>
+              <rect x="40" y="33" width="16" height="16" rx="2" fill="#e0f2fe" stroke="#1e293b" stroke-width="3"/>
+              <circle cx="24" cy="72" r="9" fill="#334155" stroke="#0f172a" stroke-width="3"/>
+              <circle cx="56" cy="72" r="9" fill="#334155" stroke="#0f172a" stroke-width="3"/>
+              <path d="M74 50 L92 50 M85 42 L93 50 L85 58" stroke="#16a34a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            <div class="aac-label">Arrival</div>
+          </div>
         </div>
 
-        <textarea class="between-textbox" id="note-c1-1" placeholder="Notes..."></textarea>
-
-        <div class="aac-card">
-          <svg viewBox="0 0 100 100" aria-hidden="true">
-            <path d="M18 52 C18 76, 82 76, 82 52 Z" fill="#38bdf8" stroke="#1e293b" stroke-width="4"/>
-            <ellipse cx="50" cy="52" rx="32" ry="8" fill="#fef3c7" stroke="#1e293b" stroke-width="3"/>
-            <path d="M58 48 L80 24" stroke="#94a3b8" stroke-width="6" stroke-linecap="round"/>
-            <ellipse cx="82" cy="22" rx="8" ry="5" transform="rotate(-40 82 22)" fill="#cbd5e1" stroke="#1e293b" stroke-width="3"/>
-            <circle cx="38" cy="51" r="4" fill="#ef4444"/>
-            <circle cx="50" cy="53" r="4" fill="#f59e0b"/>
-          </svg>
-          <div class="aac-label">Breakfast</div>
+        <div class="card-group">
+          <input type="text" class="time-range-input" id="time-c1-2" placeholder="Enter time range..." />
+          <div class="aac-card">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <path d="M18 52 C18 76, 82 76, 82 52 Z" fill="#38bdf8" stroke="#1e293b" stroke-width="4"/>
+              <ellipse cx="50" cy="52" rx="32" ry="8" fill="#fef3c7" stroke="#1e293b" stroke-width="3"/>
+              <path d="M58 48 L80 24" stroke="#94a3b8" stroke-width="6" stroke-linecap="round"/>
+              <ellipse cx="82" cy="22" rx="8" ry="5" transform="rotate(-40 82 22)" fill="#cbd5e1" stroke="#1e293b" stroke-width="3"/>
+              <circle cx="38" cy="51" r="4" fill="#ef4444"/>
+              <circle cx="50" cy="53" r="4" fill="#f59e0b"/>
+            </svg>
+            <div class="aac-label">Breakfast</div>
+          </div>
         </div>
 
-        <textarea class="between-textbox" id="note-c1-2" placeholder="Notes..."></textarea>
-
-        <div class="aac-card">
-          <svg viewBox="0 0 100 100" aria-hidden="true">
-            <circle cx="50" cy="30" r="14" fill="#facc15" stroke="#1e293b" stroke-width="3"/>
-            <path d="M50 8 L50 13 M50 47 L50 52 M28 30 L33 30 M67 30 L72 30 M35 15 L39 19 M61 41 L65 45 M65 15 L61 19 M39 41 L35 45" stroke="#f59e0b" stroke-width="3.5" stroke-linecap="round"/>
-            <circle cx="26" cy="64" r="9" fill="#60a5fa" stroke="#1e293b" stroke-width="3"/>
-            <path d="M14 86 C14 75, 38 75, 38 86" fill="#60a5fa" stroke="#1e293b" stroke-width="3"/>
-            <circle cx="50" cy="68" r="9" fill="#4ade80" stroke="#1e293b" stroke-width="3"/>
-            <path d="M38 90 C38 79, 62 79, 62 90" fill="#4ade80" stroke="#1e293b" stroke-width="3"/>
-            <circle cx="74" cy="64" r="9" fill="#f472b6" stroke="#1e293b" stroke-width="3"/>
-            <path d="M62 86 C62 75, 86 75, 86 86" fill="#f472b6" stroke="#1e293b" stroke-width="3"/>
-          </svg>
-          <div class="aac-label">Morning Meeting</div>
+        <div class="card-group">
+          <input type="text" class="time-range-input" id="time-c1-3" placeholder="Enter time range..." />
+          <div class="aac-card">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <circle cx="50" cy="30" r="14" fill="#facc15" stroke="#1e293b" stroke-width="3"/>
+              <path d="M50 8 L50 13 M50 47 L50 52 M28 30 L33 30 M67 30 L72 30 M35 15 L39 19 M61 41 L65 45 M65 15 L61 19 M39 41 L35 45" stroke="#f59e0b" stroke-width="3.5" stroke-linecap="round"/>
+              <circle cx="26" cy="64" r="9" fill="#60a5fa" stroke="#1e293b" stroke-width="3"/>
+              <path d="M14 86 C14 75, 38 75, 38 86" fill="#60a5fa" stroke="#1e293b" stroke-width="3"/>
+              <circle cx="50" cy="68" r="9" fill="#4ade80" stroke="#1e293b" stroke-width="3"/>
+              <path d="M38 90 C38 79, 62 79, 62 90" fill="#4ade80" stroke="#1e293b" stroke-width="3"/>
+              <circle cx="74" cy="64" r="9" fill="#f472b6" stroke="#1e293b" stroke-width="3"/>
+              <path d="M62 86 C62 75, 86 75, 86 86" fill="#f472b6" stroke="#1e293b" stroke-width="3"/>
+            </svg>
+            <div class="aac-label">Morning Meeting</div>
+          </div>
         </div>
       </div>
     </section>
@@ -455,85 +453,90 @@
         <div class="specialist-section">
           <div class="specialist-title-box">Specialist Schedule</div>
 
-          <!-- Slot 1: 8:35-9:10 -->
-          <div class="specialist-slot">
-            <div class="slot-time">8:35 – 9:10</div>
-            <div class="dual-slot-grid">
-              <div class="slot-pair">
-                <div class="aac-picker-box">
-                  <div class="aac-icon-display" id="icon-slot-1a"></div>
-                  <select class="specialist-select" data-target="1a" aria-label="Specialist 1 for 8:35-9:10">
-                    <option value="">+ AAC</option>
-                    <option value="music">Music</option>
-                    <option value="library">Library</option>
-                    <option value="pe">P.E.</option>
-                  </select>
+          <!-- Specialist Card 1 -->
+          <div class="card-group">
+            <input type="text" class="time-range-input" id="time-c2-s1" placeholder="Enter time range..." />
+            <div class="specialist-slot">
+              <div class="dual-slot-grid">
+                <div class="slot-pair">
+                  <div class="aac-picker-box">
+                    <div class="aac-icon-display" id="icon-slot-1a"></div>
+                    <select class="specialist-select" data-target="1a" aria-label="Specialist 1">
+                      <option value="">+ AAC</option>
+                      <option value="music">Music</option>
+                      <option value="library">Library</option>
+                      <option value="pe">P.E.</option>
+                    </select>
+                  </div>
+                  <textarea class="teacher-input" id="text-slot-1a" placeholder="Teacher & Specialist 1..."></textarea>
                 </div>
-                <textarea class="teacher-input" id="text-slot-1a" placeholder="Teacher & Specialist 1..."></textarea>
-              </div>
-              <div class="slot-pair">
-                <div class="aac-picker-box">
-                  <div class="aac-icon-display" id="icon-slot-1b"></div>
-                  <select class="specialist-select" data-target="1b" aria-label="Specialist 2 for 8:35-9:10">
-                    <option value="">+ AAC</option>
-                    <option value="music">Music</option>
-                    <option value="library">Library</option>
-                    <option value="pe">P.E.</option>
-                  </select>
+                <div class="slot-pair">
+                  <div class="aac-picker-box">
+                    <div class="aac-icon-display" id="icon-slot-1b"></div>
+                    <select class="specialist-select" data-target="1b" aria-label="Specialist 2">
+                      <option value="">+ AAC</option>
+                      <option value="music">Music</option>
+                      <option value="library">Library</option>
+                      <option value="pe">P.E.</option>
+                    </select>
+                  </div>
+                  <textarea class="teacher-input" id="text-slot-1b" placeholder="Teacher & Specialist 2..."></textarea>
                 </div>
-                <textarea class="teacher-input" id="text-slot-1b" placeholder="Teacher & Specialist 2..."></textarea>
               </div>
             </div>
           </div>
 
-          <!-- Slot 2: 9:15-9:50 -->
-          <div class="specialist-slot">
-            <div class="slot-time">9:15 – 9:50</div>
-            <div class="dual-slot-grid">
-              <div class="slot-pair">
-                <div class="aac-picker-box">
-                  <div class="aac-icon-display" id="icon-slot-2a"></div>
-                  <select class="specialist-select" data-target="2a" aria-label="Specialist 1 for 9:15-9:50">
-                    <option value="">+ AAC</option>
-                    <option value="music">Music</option>
-                    <option value="library">Library</option>
-                    <option value="pe">P.E.</option>
-                  </select>
+          <!-- Specialist Card 2 -->
+          <div class="card-group">
+            <input type="text" class="time-range-input" id="time-c2-s2" placeholder="Enter time range..." />
+            <div class="specialist-slot">
+              <div class="dual-slot-grid">
+                <div class="slot-pair">
+                  <div class="aac-picker-box">
+                    <div class="aac-icon-display" id="icon-slot-2a"></div>
+                    <select class="specialist-select" data-target="2a" aria-label="Specialist 1">
+                      <option value="">+ AAC</option>
+                      <option value="music">Music</option>
+                      <option value="library">Library</option>
+                      <option value="pe">P.E.</option>
+                    </select>
+                  </div>
+                  <textarea class="teacher-input" id="text-slot-2a" placeholder="Teacher & Specialist 1..."></textarea>
                 </div>
-                <textarea class="teacher-input" id="text-slot-2a" placeholder="Teacher & Specialist 1..."></textarea>
-              </div>
-              <div class="slot-pair">
-                <div class="aac-picker-box">
-                  <div class="aac-icon-display" id="icon-slot-2b"></div>
-                  <select class="specialist-select" data-target="2b" aria-label="Specialist 2 for 9:15-9:50">
-                    <option value="">+ AAC</option>
-                    <option value="music">Music</option>
-                    <option value="library">Library</option>
-                    <option value="pe">P.E.</option>
-                  </select>
+                <div class="slot-pair">
+                  <div class="aac-picker-box">
+                    <div class="aac-icon-display" id="icon-slot-2b"></div>
+                    <select class="specialist-select" data-target="2b" aria-label="Specialist 2">
+                      <option value="">+ AAC</option>
+                      <option value="music">Music</option>
+                      <option value="library">Library</option>
+                      <option value="pe">P.E.</option>
+                    </select>
+                  </div>
+                  <textarea class="teacher-input" id="text-slot-2b" placeholder="Teacher & Specialist 2..."></textarea>
                 </div>
-                <textarea class="teacher-input" id="text-slot-2b" placeholder="Teacher & Specialist 2..."></textarea>
               </div>
             </div>
           </div>
         </div>
 
-        <textarea class="between-textbox" id="note-c2-1" placeholder="Notes..."></textarea>
-
         <div class="work-time-section">
-          <div class="aac-card">
-            <svg viewBox="0 0 100 100" aria-hidden="true">
-              <circle cx="32" cy="26" r="11" fill="#fde047" stroke="#1e293b" stroke-width="3.5"/>
-              <path d="M16 54 C16 40, 48 40, 48 54" fill="#3b82f6" stroke="#1e293b" stroke-width="3.5"/>
-              <circle cx="68" cy="26" r="11" fill="#fdba74" stroke="#1e293b" stroke-width="3.5"/>
-              <path d="M52 54 C52 40, 84 40, 84 54" fill="#10b981" stroke="#1e293b" stroke-width="3.5"/>
-              <rect x="10" y="54" width="80" height="10" rx="3" fill="#d97706" stroke="#1e293b" stroke-width="3.5"/>
-              <line x1="20" y1="64" x2="20" y2="88" stroke="#1e293b" stroke-width="4"/>
-              <line x1="80" y1="64" x2="80" y2="88" stroke="#1e293b" stroke-width="4"/>
-              <polygon points="24,54 44,54 40,46 20,46" fill="#ffffff" stroke="#1e293b" stroke-width="2.5"/>
-              <line x1="62" y1="52" x2="76" y2="38" stroke="#facc15" stroke-width="5" stroke-linecap="round"/>
-            </svg>
-            <div class="aac-label">Work Time</div>
+          <div class="card-group">
+            <input type="text" class="time-range-input" id="time-c2-w1" placeholder="Enter time range..." />
+            <div class="aac-card">
+              <svg viewBox="0 0 100 100" aria-hidden="true">
+                <circle cx="32" cy="26" r="11" fill="#fde047" stroke="#1e293b" stroke-width="3.5"/>
+                <path d="M16 54 C16 40, 48 40, 48 54" fill="#3b82f6" stroke="#1e293b" stroke-width="3.5"/>
+                <circle cx="68" cy="26" r="11" fill="#fdba74" stroke="#1e293b" stroke-width="3.5"/>
+                <path d="M52 54 C52 40, 84 40, 84 54" fill="#10b981" stroke="#1e293b" stroke-width="3.5"/>
+                <rect x="10" y="54" width="80" height="10" rx="3" fill="#d97706" stroke="#1e293b" stroke-width="3.5"/>
+                <line x1="20" y1="64" x2="20" y2="88" stroke="#1e293b" stroke-width="4"/>
+                <line x1="80" y1="64" x2="80" y2="88" stroke="#1e293b" stroke-width="4"/>
+                <polygon points="24,54 44,54 40,46 20,46" fill="#ffffff" stroke="#1e293b" stroke-width="2.5"/>
+                <line x1="62" y1="52" x2="76" y2="38" stroke="#facc15" stroke-width="5" stroke-linecap="round"/>
+              </svg>
+              <div class="aac-label">Work Time</div>
+            </div>
           </div>
         </div>
       </div>
@@ -546,85 +549,90 @@
         <div class="specialist-section">
           <div class="specialist-title-box">Specialist Schedule</div>
 
-          <!-- Slot 3: 9:55-10:30 -->
-          <div class="specialist-slot">
-            <div class="slot-time">9:55 – 10:30</div>
-            <div class="dual-slot-grid">
-              <div class="slot-pair">
-                <div class="aac-picker-box">
-                  <div class="aac-icon-display" id="icon-slot-3a"></div>
-                  <select class="specialist-select" data-target="3a" aria-label="Specialist 1 for 9:55-10:30">
-                    <option value="">+ AAC</option>
-                    <option value="music">Music</option>
-                    <option value="library">Library</option>
-                    <option value="pe">P.E.</option>
-                  </select>
+          <!-- Specialist Card 3 -->
+          <div class="card-group">
+            <input type="text" class="time-range-input" id="time-c3-s1" placeholder="Enter time range..." />
+            <div class="specialist-slot">
+              <div class="dual-slot-grid">
+                <div class="slot-pair">
+                  <div class="aac-picker-box">
+                    <div class="aac-icon-display" id="icon-slot-3a"></div>
+                    <select class="specialist-select" data-target="3a" aria-label="Specialist 1">
+                      <option value="">+ AAC</option>
+                      <option value="music">Music</option>
+                      <option value="library">Library</option>
+                      <option value="pe">P.E.</option>
+                    </select>
+                  </div>
+                  <textarea class="teacher-input" id="text-slot-3a" placeholder="Teacher & Specialist 1..."></textarea>
                 </div>
-                <textarea class="teacher-input" id="text-slot-3a" placeholder="Teacher & Specialist 1..."></textarea>
-              </div>
-              <div class="slot-pair">
-                <div class="aac-picker-box">
-                  <div class="aac-icon-display" id="icon-slot-3b"></div>
-                  <select class="specialist-select" data-target="3b" aria-label="Specialist 2 for 9:55-10:30">
-                    <option value="">+ AAC</option>
-                    <option value="music">Music</option>
-                    <option value="library">Library</option>
-                    <option value="pe">P.E.</option>
-                  </select>
+                <div class="slot-pair">
+                  <div class="aac-picker-box">
+                    <div class="aac-icon-display" id="icon-slot-3b"></div>
+                    <select class="specialist-select" data-target="3b" aria-label="Specialist 2">
+                      <option value="">+ AAC</option>
+                      <option value="music">Music</option>
+                      <option value="library">Library</option>
+                      <option value="pe">P.E.</option>
+                    </select>
+                  </div>
+                  <textarea class="teacher-input" id="text-slot-3b" placeholder="Teacher & Specialist 2..."></textarea>
                 </div>
-                <textarea class="teacher-input" id="text-slot-3b" placeholder="Teacher & Specialist 2..."></textarea>
               </div>
             </div>
           </div>
 
-          <!-- Slot 4: 10:35-11:10 -->
-          <div class="specialist-slot">
-            <div class="slot-time">10:35 – 11:10</div>
-            <div class="dual-slot-grid">
-              <div class="slot-pair">
-                <div class="aac-picker-box">
-                  <div class="aac-icon-display" id="icon-slot-4a"></div>
-                  <select class="specialist-select" data-target="4a" aria-label="Specialist 1 for 10:35-11:10">
-                    <option value="">+ AAC</option>
-                    <option value="music">Music</option>
-                    <option value="library">Library</option>
-                    <option value="pe">P.E.</option>
-                  </select>
+          <!-- Specialist Card 4 -->
+          <div class="card-group">
+            <input type="text" class="time-range-input" id="time-c3-s2" placeholder="Enter time range..." />
+            <div class="specialist-slot">
+              <div class="dual-slot-grid">
+                <div class="slot-pair">
+                  <div class="aac-picker-box">
+                    <div class="aac-icon-display" id="icon-slot-4a"></div>
+                    <select class="specialist-select" data-target="4a" aria-label="Specialist 1">
+                      <option value="">+ AAC</option>
+                      <option value="music">Music</option>
+                      <option value="library">Library</option>
+                      <option value="pe">P.E.</option>
+                    </select>
+                  </div>
+                  <textarea class="teacher-input" id="text-slot-4a" placeholder="Teacher & Specialist 1..."></textarea>
                 </div>
-                <textarea class="teacher-input" id="text-slot-4a" placeholder="Teacher & Specialist 1..."></textarea>
-              </div>
-              <div class="slot-pair">
-                <div class="aac-picker-box">
-                  <div class="aac-icon-display" id="icon-slot-4b"></div>
-                  <select class="specialist-select" data-target="4b" aria-label="Specialist 2 for 10:35-11:10">
-                    <option value="">+ AAC</option>
-                    <option value="music">Music</option>
-                    <option value="library">Library</option>
-                    <option value="pe">P.E.</option>
-                  </select>
+                <div class="slot-pair">
+                  <div class="aac-picker-box">
+                    <div class="aac-icon-display" id="icon-slot-4b"></div>
+                    <select class="specialist-select" data-target="4b" aria-label="Specialist 2">
+                      <option value="">+ AAC</option>
+                      <option value="music">Music</option>
+                      <option value="library">Library</option>
+                      <option value="pe">P.E.</option>
+                    </select>
+                  </div>
+                  <textarea class="teacher-input" id="text-slot-4b" placeholder="Teacher & Specialist 2..."></textarea>
                 </div>
-                <textarea class="teacher-input" id="text-slot-4b" placeholder="Teacher & Specialist 2..."></textarea>
               </div>
             </div>
           </div>
         </div>
 
-        <textarea class="between-textbox" id="note-c3-1" placeholder="Notes..."></textarea>
-
         <div class="work-time-section">
-          <div class="aac-card">
-            <svg viewBox="0 0 100 100" aria-hidden="true">
-              <circle cx="32" cy="26" r="11" fill="#fde047" stroke="#1e293b" stroke-width="3.5"/>
-              <path d="M16 54 C16 40, 48 40, 48 54" fill="#3b82f6" stroke="#1e293b" stroke-width="3.5"/>
-              <circle cx="68" cy="26" r="11" fill="#fdba74" stroke="#1e293b" stroke-width="3.5"/>
-              <path d="M52 54 C52 40, 84 40, 84 54" fill="#10b981" stroke="#1e293b" stroke-width="3.5"/>
-              <rect x="10" y="54" width="80" height="10" rx="3" fill="#d97706" stroke="#1e293b" stroke-width="3.5"/>
-              <line x1="20" y1="64" x2="20" y2="88" stroke="#1e293b" stroke-width="4"/>
-              <line x1="80" y1="64" x2="80" y2="88" stroke="#1e293b" stroke-width="4"/>
-              <polygon points="24,54 44,54 40,46 20,46" fill="#ffffff" stroke="#1e293b" stroke-width="2.5"/>
-              <line x1="62" y1="52" x2="76" y2="38" stroke="#facc15" stroke-width="5" stroke-linecap="round"/>
-            </svg>
-            <div class="aac-label">Work Time</div>
+          <div class="card-group">
+            <input type="text" class="time-range-input" id="time-c3-w1" placeholder="Enter time range..." />
+            <div class="aac-card">
+              <svg viewBox="0 0 100 100" aria-hidden="true">
+                <circle cx="32" cy="26" r="11" fill="#fde047" stroke="#1e293b" stroke-width="3.5"/>
+                <path d="M16 54 C16 40, 48 40, 48 54" fill="#3b82f6" stroke="#1e293b" stroke-width="3.5"/>
+                <circle cx="68" cy="26" r="11" fill="#fdba74" stroke="#1e293b" stroke-width="3.5"/>
+                <path d="M52 54 C52 40, 84 40, 84 54" fill="#10b981" stroke="#1e293b" stroke-width="3.5"/>
+                <rect x="10" y="54" width="80" height="10" rx="3" fill="#d97706" stroke="#1e293b" stroke-width="3.5"/>
+                <line x1="20" y1="64" x2="20" y2="88" stroke="#1e293b" stroke-width="4"/>
+                <line x1="80" y1="64" x2="80" y2="88" stroke="#1e293b" stroke-width="4"/>
+                <polygon points="24,54 44,54 40,46 20,46" fill="#ffffff" stroke="#1e293b" stroke-width="2.5"/>
+                <line x1="62" y1="52" x2="76" y2="38" stroke="#facc15" stroke-width="5" stroke-linecap="round"/>
+              </svg>
+              <div class="aac-label">Work Time</div>
+            </div>
           </div>
         </div>
       </div>
@@ -634,32 +642,36 @@
     <section class="schedule-col" id="col-4" data-start="665" data-end="705">
       <div class="col-header">11:05 AM – 11:45 AM</div>
       <div class="col-body">
-        <div class="aac-card">
-          <svg viewBox="0 0 100 100" aria-hidden="true">
-            <rect x="12" y="24" width="76" height="52" rx="6" fill="#cbd5e1" stroke="#1e293b" stroke-width="4"/>
-            <rect x="18" y="30" width="38" height="40" rx="4" fill="#ffffff" stroke="#1e293b" stroke-width="2.5"/>
-            <rect x="60" y="30" width="22" height="18" rx="4" fill="#ffffff" stroke="#1e293b" stroke-width="2.5"/>
-            <rect x="60" y="52" width="22" height="18" rx="4" fill="#ffffff" stroke="#1e293b" stroke-width="2.5"/>
-            <circle cx="37" cy="50" r="11" fill="#f97316" stroke="#1e293b" stroke-width="2.5"/>
-            <circle cx="71" cy="39" r="6" fill="#ef4444"/>
-            <rect x="65" y="56" width="12" height="10" rx="2" fill="#38bdf8"/>
-          </svg>
-          <div class="aac-label">Lunch</div>
+        <div class="card-group">
+          <input type="text" class="time-range-input" id="time-c4-1" placeholder="Enter time range..." />
+          <div class="aac-card">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <rect x="12" y="24" width="76" height="52" rx="6" fill="#cbd5e1" stroke="#1e293b" stroke-width="4"/>
+              <rect x="18" y="30" width="38" height="40" rx="4" fill="#ffffff" stroke="#1e293b" stroke-width="2.5"/>
+              <rect x="60" y="30" width="22" height="18" rx="4" fill="#ffffff" stroke="#1e293b" stroke-width="2.5"/>
+              <rect x="60" y="52" width="22" height="18" rx="4" fill="#ffffff" stroke="#1e293b" stroke-width="2.5"/>
+              <circle cx="37" cy="50" r="11" fill="#f97316" stroke="#1e293b" stroke-width="2.5"/>
+              <circle cx="71" cy="39" r="6" fill="#ef4444"/>
+              <rect x="65" y="56" width="12" height="10" rx="2" fill="#38bdf8"/>
+            </svg>
+            <div class="aac-label">Lunch</div>
+          </div>
         </div>
 
-        <textarea class="between-textbox" id="note-c4-1" placeholder="Notes..."></textarea>
-
-        <div class="aac-card">
-          <svg viewBox="0 0 100 100" aria-hidden="true">
-            <line x1="20" y1="20" x2="80" y2="20" stroke="#dc2626" stroke-width="6" stroke-linecap="round"/>
-            <line x1="24" y1="20" x2="14" y2="85" stroke="#dc2626" stroke-width="5" stroke-linecap="round"/>
-            <line x1="76" y1="20" x2="86" y2="85" stroke="#dc2626" stroke-width="5" stroke-linecap="round"/>
-            <line x1="40" y1="20" x2="40" y2="62" stroke="#475569" stroke-width="3"/>
-            <line x1="60" y1="20" x2="60" y2="62" stroke="#475569" stroke-width="3"/>
-            <rect x="34" y="62" width="32" height="7" rx="3" fill="#facc15" stroke="#1e293b" stroke-width="2.5"/>
-            <circle cx="50" cy="46" r="8" fill="#3b82f6" stroke="#1e293b" stroke-width="2.5"/>
-          </svg>
-          <div class="aac-label">Recess</div>
+        <div class="card-group">
+          <input type="text" class="time-range-input" id="time-c4-2" placeholder="Enter time range..." />
+          <div class="aac-card">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <line x1="20" y1="20" x2="80" y2="20" stroke="#dc2626" stroke-width="6" stroke-linecap="round"/>
+              <line x1="24" y1="20" x2="14" y2="85" stroke="#dc2626" stroke-width="5" stroke-linecap="round"/>
+              <line x1="76" y1="20" x2="86" y2="85" stroke="#dc2626" stroke-width="5" stroke-linecap="round"/>
+              <line x1="40" y1="20" x2="40" y2="62" stroke="#475569" stroke-width="3"/>
+              <line x1="60" y1="20" x2="60" y2="62" stroke="#475569" stroke-width="3"/>
+              <rect x="34" y="62" width="32" height="7" rx="3" fill="#facc15" stroke="#1e293b" stroke-width="2.5"/>
+              <circle cx="50" cy="46" r="8" fill="#3b82f6" stroke="#1e293b" stroke-width="2.5"/>
+            </svg>
+            <div class="aac-label">Recess</div>
+          </div>
         </div>
       </div>
     </section>
@@ -670,48 +682,58 @@
       <div class="col-body">
         <div class="centers-header">Centers</div>
 
-        <textarea class="between-textbox" id="note-c5-1" placeholder="Center Groups / Notes..."></textarea>
-
         <div class="centers-grid">
-          <div class="aac-card">
-            <svg viewBox="0 0 100 100" aria-hidden="true">
-              <path d="M28 45 C18 45, 18 25, 34 25 C38 14, 62 14, 66 25 C82 25, 82 45, 72 45 Z" fill="#ffffff" stroke="#1e293b" stroke-width="3.5"/>
-              <rect x="28" y="45" width="44" height="14" fill="#ffffff" stroke="#1e293b" stroke-width="3.5"/>
-              <path d="M24 66 C24 86, 76 86, 76 66 Z" fill="#ef4444" stroke="#1e293b" stroke-width="3.5"/>
-              <line x1="62" y1="66" x2="82" y2="48" stroke="#d97706" stroke-width="5" stroke-linecap="round"/>
-            </svg>
-            <div class="aac-label">Cooking</div>
+          <div class="card-group">
+            <input type="text" class="time-range-input" id="time-c5-1" placeholder="Enter time..." />
+            <div class="aac-card">
+              <svg viewBox="0 0 100 100" aria-hidden="true">
+                <path d="M28 45 C18 45, 18 25, 34 25 C38 14, 62 14, 66 25 C82 25, 82 45, 72 45 Z" fill="#ffffff" stroke="#1e293b" stroke-width="3.5"/>
+                <rect x="28" y="45" width="44" height="14" fill="#ffffff" stroke="#1e293b" stroke-width="3.5"/>
+                <path d="M24 66 C24 86, 76 86, 76 66 Z" fill="#ef4444" stroke="#1e293b" stroke-width="3.5"/>
+                <line x1="62" y1="66" x2="82" y2="48" stroke="#d97706" stroke-width="5" stroke-linecap="round"/>
+              </svg>
+              <div class="aac-label">Cooking</div>
+            </div>
           </div>
 
-          <div class="aac-card">
-            <svg viewBox="0 0 100 100" aria-hidden="true">
-              <path d="M50 18 C25 18, 14 38, 18 58 C22 76, 42 84, 56 76 C64 71, 60 60, 68 58 C78 55, 86 46, 82 32 C78 20, 64 18, 50 18 Z" fill="#fde68a" stroke="#1e293b" stroke-width="3.5"/>
-              <circle cx="34" cy="36" r="6" fill="#ef4444"/>
-              <circle cx="52" cy="30" r="6" fill="#3b82f6"/>
-              <circle cx="68" cy="38" r="6" fill="#22c55e"/>
-              <circle cx="32" cy="54" r="6" fill="#a855f7"/>
-              <circle cx="48" cy="64" r="5" fill="#ffffff" stroke="#1e293b" stroke-width="2.5"/>
-            </svg>
-            <div class="aac-label">Art</div>
+          <div class="card-group">
+            <input type="text" class="time-range-input" id="time-c5-2" placeholder="Enter time..." />
+            <div class="aac-card">
+              <svg viewBox="0 0 100 100" aria-hidden="true">
+                <path d="M50 18 C25 18, 14 38, 18 58 C22 76, 42 84, 56 76 C64 71, 60 60, 68 58 C78 55, 86 46, 82 32 C78 20, 64 18, 50 18 Z" fill="#fde68a" stroke="#1e293b" stroke-width="3.5"/>
+                <circle cx="34" cy="36" r="6" fill="#ef4444"/>
+                <circle cx="52" cy="30" r="6" fill="#3b82f6"/>
+                <circle cx="68" cy="38" r="6" fill="#22c55e"/>
+                <circle cx="32" cy="54" r="6" fill="#a855f7"/>
+                <circle cx="48" cy="64" r="5" fill="#ffffff" stroke="#1e293b" stroke-width="2.5"/>
+              </svg>
+              <div class="aac-label">Art</div>
+            </div>
           </div>
 
-          <div class="aac-card">
-            <svg viewBox="0 0 100 100" aria-hidden="true">
-              <path d="M25 30 H45 C45 22, 55 22, 55 30 H75 V50 C83 50, 83 60, 75 60 V80 H55 C55 72, 45 72, 45 80 H25 V60 C33 60, 33 50, 25 50 Z" fill="#38bdf8" stroke="#1e293b" stroke-width="4" stroke-linejoin="round"/>
-            </svg>
-            <div class="aac-label">Puzzles / Games</div>
+          <div class="card-group">
+            <input type="text" class="time-range-input" id="time-c5-3" placeholder="Enter time..." />
+            <div class="aac-card">
+              <svg viewBox="0 0 100 100" aria-hidden="true">
+                <path d="M25 30 H45 C45 22, 55 22, 55 30 H75 V50 C83 50, 83 60, 75 60 V80 H55 C55 72, 45 72, 45 80 H25 V60 C33 60, 33 50, 25 50 Z" fill="#38bdf8" stroke="#1e293b" stroke-width="4" stroke-linejoin="round"/>
+              </svg>
+              <div class="aac-label">Puzzles / Games</div>
+            </div>
           </div>
 
-          <div class="aac-card">
-            <svg viewBox="0 0 100 100" aria-hidden="true">
-              <path d="M14 28 C28 24, 42 28, 50 34 C58 28, 72 24, 86 28 V76 C72 72, 58 76, 50 82 C42 76, 28 72, 14 76 Z" fill="#ffffff" stroke="#1e293b" stroke-width="4" stroke-linejoin="round"/>
-              <line x1="50" y1="34" x2="50" y2="82" stroke="#1e293b" stroke-width="3.5"/>
-              <line x1="22" y1="42" x2="42" y2="44" stroke="#94a3b8" stroke-width="3" stroke-linecap="round"/>
-              <line x1="22" y1="54" x2="42" y2="56" stroke="#94a3b8" stroke-width="3" stroke-linecap="round"/>
-              <line x1="58" y1="44" x2="78" y2="42" stroke="#94a3b8" stroke-width="3" stroke-linecap="round"/>
-              <line x1="58" y1="56" x2="78" y2="54" stroke="#94a3b8" stroke-width="3" stroke-linecap="round"/>
-            </svg>
-            <div class="aac-label">Reading</div>
+          <div class="card-group">
+            <input type="text" class="time-range-input" id="time-c5-4" placeholder="Enter time..." />
+            <div class="aac-card">
+              <svg viewBox="0 0 100 100" aria-hidden="true">
+                <path d="M14 28 C28 24, 42 28, 50 34 C58 28, 72 24, 86 28 V76 C72 72, 58 76, 50 82 C42 76, 28 72, 14 76 Z" fill="#ffffff" stroke="#1e293b" stroke-width="4" stroke-linejoin="round"/>
+                <line x1="50" y1="34" x2="50" y2="82" stroke="#1e293b" stroke-width="3.5"/>
+                <line x1="22" y1="42" x2="42" y2="44" stroke="#94a3b8" stroke-width="3" stroke-linecap="round"/>
+                <line x1="22" y1="54" x2="42" y2="56" stroke="#94a3b8" stroke-width="3" stroke-linecap="round"/>
+                <line x1="58" y1="44" x2="78" y2="42" stroke="#94a3b8" stroke-width="3" stroke-linecap="round"/>
+                <line x1="58" y1="56" x2="78" y2="54" stroke="#94a3b8" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+              <div class="aac-label">Reading</div>
+            </div>
           </div>
         </div>
       </div>
@@ -721,51 +743,57 @@
     <section class="schedule-col" id="col-6" data-start="795" data-end="850">
       <div class="col-header">1:15 PM – 2:10 PM</div>
       <div class="col-body">
-        <div class="aac-card">
-          <svg viewBox="0 0 100 100" aria-hidden="true">
-            <circle cx="50" cy="50" r="32" fill="#ef4444" stroke="#1e293b" stroke-width="4"/>
-            <path d="M22 36 C40 44, 60 44, 78 36" fill="none" stroke="#ffffff" stroke-width="4"/>
-            <path d="M22 64 C40 56, 60 56, 78 64" fill="none" stroke="#ffffff" stroke-width="4"/>
-            <line x1="50" y1="18" x2="50" y2="82" stroke="#ffffff" stroke-width="4"/>
-          </svg>
-          <div class="aac-label">Recess</div>
+        <div class="card-group">
+          <input type="text" class="time-range-input" id="time-c6-1" placeholder="Enter time range..." />
+          <div class="aac-card">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <circle cx="50" cy="50" r="32" fill="#ef4444" stroke="#1e293b" stroke-width="4"/>
+              <path d="M22 36 C40 44, 60 44, 78 36" fill="none" stroke="#ffffff" stroke-width="4"/>
+              <path d="M22 64 C40 56, 60 56, 78 64" fill="none" stroke="#ffffff" stroke-width="4"/>
+              <line x1="50" y1="18" x2="50" y2="82" stroke="#ffffff" stroke-width="4"/>
+            </svg>
+            <div class="aac-label">Recess</div>
+          </div>
         </div>
 
-        <textarea class="between-textbox" id="note-c6-1" placeholder="Notes..."></textarea>
-
-        <div class="aac-card">
-          <svg viewBox="0 0 100 100" aria-hidden="true">
-            <path d="M50 32 C34 26, 20 38, 22 58 C24 76, 38 84, 50 80 C62 84, 76 76, 78 58 C80 38, 66 26, 50 32 Z" fill="#ef4444" stroke="#1e293b" stroke-width="3.5"/>
-            <path d="M50 32 C50 22, 54 16, 58 14" fill="none" stroke="#78350f" stroke-width="4" stroke-linecap="round"/>
-            <path d="M52 22 C62 16, 72 22, 66 28 C60 32, 52 26, 52 22 Z" fill="#22c55e" stroke="#1e293b" stroke-width="2.5"/>
-          </svg>
-          <div class="aac-label">Snack</div>
+        <div class="card-group">
+          <input type="text" class="time-range-input" id="time-c6-2" placeholder="Enter time range..." />
+          <div class="aac-card">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <path d="M50 32 C34 26, 20 38, 22 58 C24 76, 38 84, 50 80 C62 84, 76 76, 78 58 C80 38, 66 26, 50 32 Z" fill="#ef4444" stroke="#1e293b" stroke-width="3.5"/>
+              <path d="M50 32 C50 22, 54 16, 58 14" fill="none" stroke="#78350f" stroke-width="4" stroke-linecap="round"/>
+              <path d="M52 22 C62 16, 72 22, 66 28 C60 32, 52 26, 52 22 Z" fill="#22c55e" stroke="#1e293b" stroke-width="2.5"/>
+            </svg>
+            <div class="aac-label">Snack</div>
+          </div>
         </div>
 
-        <textarea class="between-textbox" id="note-c6-2" placeholder="Notes..."></textarea>
-
-        <div class="aac-card">
-          <svg viewBox="0 0 100 100" aria-hidden="true">
-            <line x1="35" y1="16" x2="35" y2="62" stroke="#d97706" stroke-width="6" stroke-linecap="round"/>
-            <path d="M22 62 H48 L54 86 H16 Z" fill="#facc15" stroke="#1e293b" stroke-width="3.5" stroke-linejoin="round"/>
-            <line x1="25" y1="74" x2="23" y2="86" stroke="#1e293b" stroke-width="2.5"/>
-            <line x1="35" y1="74" x2="35" y2="86" stroke="#1e293b" stroke-width="2.5"/>
-            <line x1="45" y1="74" x2="47" y2="86" stroke="#1e293b" stroke-width="2.5"/>
-            <path d="M62 66 L72 78 L90 54" fill="none" stroke="#16a34a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <div class="aac-label">Class Jobs</div>
+        <div class="card-group">
+          <input type="text" class="time-range-input" id="time-c6-3" placeholder="Enter time range..." />
+          <div class="aac-card">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <line x1="35" y1="16" x2="35" y2="62" stroke="#d97706" stroke-width="6" stroke-linecap="round"/>
+              <path d="M22 62 H48 L54 86 H16 Z" fill="#facc15" stroke="#1e293b" stroke-width="3.5" stroke-linejoin="round"/>
+              <line x1="25" y1="74" x2="23" y2="86" stroke="#1e293b" stroke-width="2.5"/>
+              <line x1="35" y1="74" x2="35" y2="86" stroke="#1e293b" stroke-width="2.5"/>
+              <line x1="45" y1="74" x2="47" y2="86" stroke="#1e293b" stroke-width="2.5"/>
+              <path d="M62 66 L72 78 L90 54" fill="none" stroke="#16a34a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="aac-label">Class Jobs</div>
+          </div>
         </div>
 
-        <textarea class="between-textbox" id="note-c6-3" placeholder="Notes..."></textarea>
-
-        <div class="aac-card">
-          <svg viewBox="0 0 100 100" aria-hidden="true">
-            <rect x="28" y="34" width="44" height="48" rx="10" fill="#3b82f6" stroke="#1e293b" stroke-width="3.5"/>
-            <path d="M40 34 V24 C40 18, 60 18, 60 24 V34" fill="none" stroke="#1e293b" stroke-width="4"/>
-            <rect x="36" y="54" width="28" height="20" rx="4" fill="#60a5fa" stroke="#1e293b" stroke-width="3"/>
-            <path d="M12 52 H26 M18 45 L11 52 L18 59" fill="none" stroke="#ef4444" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <div class="aac-label">Dismissal</div>
+        <div class="card-group">
+          <input type="text" class="time-range-input" id="time-c6-4" placeholder="Enter time range..." />
+          <div class="aac-card">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <rect x="28" y="34" width="44" height="48" rx="10" fill="#3b82f6" stroke="#1e293b" stroke-width="3.5"/>
+              <path d="M40 34 V24 C40 18, 60 18, 60 24 V34" fill="none" stroke="#1e293b" stroke-width="4"/>
+              <rect x="36" y="54" width="28" height="20" rx="4" fill="#60a5fa" stroke="#1e293b" stroke-width="3"/>
+              <path d="M12 52 H26 M18 45 L11 52 L18 59" fill="none" stroke="#ef4444" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="aac-label">Dismissal</div>
+          </div>
         </div>
       </div>
     </section>
@@ -798,13 +826,12 @@
         </svg>`
     };
 
-    const STORAGE_KEY = 'classroom_schedule_data_v2';
+    const STORAGE_KEY = 'classroom_schedule_data_v3';
     const slotIds = ['1a', '1b', '2a', '2b', '3a', '3b', '4a', '4b'];
 
     function loadScheduleData() {
       const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
 
-      // Load specialist icons and teacher inputs
       slotIds.forEach(id => {
         const selectEl = document.querySelector(`.specialist-select[data-target="${id}"]`);
         const textEl = document.getElementById(`text-slot-${id}`);
@@ -817,10 +844,9 @@
         }
       });
 
-      // Load between-clipart textboxes
-      document.querySelectorAll('.between-textbox').forEach(box => {
-        if (saved[box.id]) {
-          box.value = saved[box.id];
+      document.querySelectorAll('.time-range-input').forEach(input => {
+        if (saved[input.id]) {
+          input.value = saved[input.id];
         }
       });
     }
@@ -835,8 +861,8 @@
         if (textEl) data[`text_${id}`] = textEl.value;
       });
 
-      document.querySelectorAll('.between-textbox').forEach(box => {
-        data[box.id] = box.value;
+      document.querySelectorAll('.time-range-input').forEach(input => {
+        data[input.id] = input.value;
       });
 
       localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
@@ -862,8 +888,8 @@
       });
     });
 
-    document.querySelectorAll('.teacher-input, .between-textbox').forEach(textarea => {
-      textarea.addEventListener('input', saveScheduleData);
+    document.querySelectorAll('.teacher-input, .time-range-input').forEach(el => {
+      el.addEventListener('input', saveScheduleData);
     });
 
     // Time Highlighting & Clock Logic
